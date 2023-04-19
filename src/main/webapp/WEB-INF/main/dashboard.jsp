@@ -16,8 +16,8 @@
 </head>
 <body>
 		<h1>Welcome to the Dashboard <c:out value="${loggedInUser.firstName}"/> </h1>
-		<a href="/shows/new">+Create</a>
-		<a href="/users/logout">logout</a>
+		<a href="/shows/new" class="btn btn-success">+Create</a>
+		<a href="/users/logout" class="btn btn-primary">logout</a>
 		<h1>All Shows from Database</h1>
 		
 		<table class="table table-dark">
@@ -44,10 +44,10 @@
 						<td>
 							<a href="/shows/display/${show.id}">show</a>
 							<c:if test="${user_id == show.user.id}"> 
-								||<a href="/shows/edit/${show.id}" class="btn btn-outline-warning">Edit</a>||
+								||<a href="/shows/edit/${show.id}" class="btn btn-warning">Edit</a>||
 								 <form action="/shows/delete/${show.id}" method="post">
 									<input type="hidden" name="_method" value="delete"/>
-									<input type="submit" value="Delete" class="btn btn-outline-danger"/>
+									<input type="submit" value="Delete" class="btn btn-danger"/>
 								</form>				
 							 </c:if>
 						</td>
